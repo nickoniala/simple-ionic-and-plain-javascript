@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Ionic and Vanilla Javascript App</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>My Courses</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>New Course</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Course Name</ion-label>
+                    <ion-input
+                      type="text"
+                      clear-input="true"
+                      id="input-name"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating"
+                      >Course Rating (1-5)</ion-label
+                    >
+                    <ion-input
+                      type="number"
+                      clear-input="true"
+                      inputmode="numeric"
+                      min="1"
+                      max="5"
+                      id="input-rating"
+                    ></ion-input>
+                  </ion-item>
+                  <div class="ion-text-right ion-margin-vertical">
+                    <ion-button color="danger" fill="outline" id="btn-cancel">
+                      <ion-icon name="close-outline" slot="start"></ion-icon>
+                      Cancel
+                    </ion-button>
+                    <ion-button color="dark" fill="outline" id="btn-submit">
+                      <ion-icon name="add-outline" slot="start"></ion-icon>
+                      Submit
+                    </ion-button>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-list id="courses-list"></ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
+    <script src="./app.js"></script>
+  </body>
+</html>
